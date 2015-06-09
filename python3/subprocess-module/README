@@ -1,0 +1,7 @@
+Subprocess Module
+
+- used for dealing with external commands
+- it is used to spawn process, connect to their input/output/error pipes and obtain return codes
+- intended to be replacement of os.system, os.spawn, os.popen
+
+

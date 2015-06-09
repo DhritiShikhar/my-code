@@ -4,13 +4,19 @@ Returns group id of current process
 >>> os.getgid()
 1000
 
+-----------------------------------------------------------------------------------------------------------------
+
 Returns user id of current process
 >>> os.getuid()
 1000
 
+-------------------------------------------------------------------------------------------------------------------
+
 Returns process id of current process
 >>> os.getpid()
 2464
+
+-------------------------------------------------------------------------------------------------------------------
 
 Returns information identifying current operating system
 >>> os.uname()
@@ -34,4 +40,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 [dshikhar@localhost os-module]$ ls
 dir2    f11.py  f13.py  f15.py  f17.py  f2.py  f4.py  f6.py  f8.py  out.jpg          README  sample.tmp
 f10.py  f12.py  f14.py  f16.py  f1.py   f3     f5.py  f7.py  f9.py  Python-Logo.jpg  sample
+
+-----------------------------------------------------------------------------------------------------------------
+returns a list with the contents of directory defined by path
+
+>>> os.listdir("/home/dshikhar/Documents/my-code/python3/os-module")
+['f14.py', 'f13.py', 'f18', '.f18.swp', 'f17.py', 'sample', '.new.swp', 'f8.py', 'f6.py', 'f9.py', 'sample.tmp', 'Python-Logo.jpg', 'f15.py', 'out.jpg', 'f5.py', 'f1.py', 'README', 'f16.py', 'f7.py', 'f11.py', 'f10.py', 'dir1', 'f2.py', 'f4.py', 'f3', 'f12.py']
+
+-------------------------------------------------------------------------------------------------------------------
+
 

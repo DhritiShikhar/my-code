@@ -1,0 +1,63 @@
+Instead of using os.system, we can use subprocess.Popen. It helps to get the output of the script.
+Functions like check_output, check_call use Popen internally.
+
+>>> import subprocess
+>>> x = subprocess.Popen(['touch', 'xyz'])
+>>> x
+<subprocess.Popen object at 0x7f80b0d66208>
+>>> print (x)
+<subprocess.Popen object at 0x7f80b0d66208>
+>>> x.poll()
+0
+>>> x.returncode
+0
+
+[dshikhar@localhost subprocess-module]$ ls 
+README  xyz
+--------------------------------------------------------------------------------------------
+>>> p = subprocess.Popen(['cp', '-r', 'xyz', 'abc'])
+
+[dshikhar@localhost subprocess-module]$ ls
+abc  README  xyz
+----------------------------------------------------------------------------------------------
+To emulate the behaviour of os.system, optional parameter shell has to be set to true
+
+>>> q = subprocess.Popen("touch hello", shell = True)
+
+[dshikhar@localhost subprocess-module]$ ls
+abc  hello  README  xyz
+
+--------------------------------------------------------------------------------------------
+To catch the output of a shell command into Python, we set the optional parameter stdout to subprocess.PIPE
+
+>>> process = subprocess.Popen(['ls', '-l'], stdout=subprocess.PIPE)
+>>> print (process.stdout.read())
+b'total 4\n-rw-rw-r--. 1 dshikhar dshikhar   0 Jun  9 14:53 abc\n-rw-rw-r--. 1 dshikhar dshikhar   0 Jun  9 14:55 hello\n-rw-rw-r--. 1 dshikhar dshikhar 222 Jun  9 14:27 README\n-rw-rw-r--. 1 dshikhar dshikhar   0 Jun  9 14:51 xyz\n'
+
+-------------------------------------------------------------------------------------------
+
+
+>>> process = subprocess.Popen(['ls', '-l'], stdout=subprocess.PIPE)
+>>> process.wait()
+0
+
+---------------------------------------------------------------------------------------------------------
+Run command with arguments and return its output as a byte string
+
+>>> ls_output = subprocess.check_output(['ls'])
+>>> ls_output
+b'abc\nf1\nhello\nREADME\nxyz\n'
+
+
+---------------------------------------------------------------------------------------------------------
+
+>>> subprocess.call('ls | wc -l', shell=True)
+5
+0
+>>> subprocess.call('ls', shell=True)
+abc  f1  hello  README  xyz
+0
+
+---------------------------------------------------------------------------------------------------------
+
+
