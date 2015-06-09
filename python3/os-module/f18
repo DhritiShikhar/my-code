@@ -1,0 +1,37 @@
+>>> import os
+
+Returns group id of current process
+>>> os.getgid()
+1000
+
+Returns user id of current process
+>>> os.getuid()
+1000
+
+Returns process id of current process
+>>> os.getpid()
+2464
+
+Returns information identifying current operating system
+>>> os.uname()
+posix.uname_result(sysname='Linux', nodename='localhost.localdomain', release='4.0.4-301.fc22.x86_64', version='#1 SMP Thu May 21 13:10:33 UTC 2015', machine='x86_64')
+
+-------------------------------------------------------------------------------------------------------------------
+os.rename renames the file/ directory from "source" to "destination"
+
+[dshikhar@localhost os-module]$ ls
+dir1    f11.py  f13.py  f15.py  f17.py  f2.py  f4.py  f6.py  f8.py  out.jpg          README  sample.tmp
+f10.py  f12.py  f14.py  f16.py  f1.py   f3     f5.py  f7.py  f9.py  Python-Logo.jpg  sample
+
+[dshikhar@localhost os-module]$ python3
+Python 3.4.2 (default, Jan 12 2015, 12:13:20) 
+[GCC 4.9.2 20150107 (Red Hat 4.9.2-5)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>> os.rename("dir1", "dir2")
+>>> quit()
+
+[dshikhar@localhost os-module]$ ls
+dir2    f11.py  f13.py  f15.py  f17.py  f2.py  f4.py  f6.py  f8.py  out.jpg          README  sample.tmp
+f10.py  f12.py  f14.py  f16.py  f1.py   f3     f5.py  f7.py  f9.py  Python-Logo.jpg  sample
+

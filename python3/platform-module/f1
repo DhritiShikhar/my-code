@@ -1,0 +1,57 @@
+>>>import platform
+
+To return the version of python interpreter as major.minor.patch-level:
+>>> platform.python_version()
+3.4.2
+
+To return bit architecture:
+>>> platform.architecture()
+('64bit', 'ELF')
+
+To return machine type:
+>>> platform.machine()
+x86_64
+
+To return computer's network name:
+>>> platform.node()
+localhost.localdomain
+
+To return a single string with underlying useful platform information:
+>>> platform.platform()
+'Linux-4.0.4-301.fc22.x86_64-x86_64-with-fedora-22-Twenty_Two
+
+To return processor name:
+>>> platform.processor()
+'x86_64'
+
+Returns a tuple stating Python build number and date as strings:
+>>> platform.python_build()
+('default', 'Jan 12 2015 12:13:20')
+
+Returns string identifying compiler used fir compiling:
+>>> platform.python_compiler()
+'GCC 4.9.2 20150107 (Red Hat 4.9.2-5)'
+
+Returns a string identifying Python implementation:
+>>> platform.python_implementation()
+'CPython'
+
+Returns system release:
+>>> platform.release()
+'4.0.4-301.fc22.x86_64'
+
+Returns the OS name:
+>>> platform.system()
+'Linux'
+
+Returns OS release:
+>>> platform.version()
+'#1 SMP Thu May 21 13:10:33 UTC 2015'
+
+Returns a tuple of strings identifying underlying platform:
+>>> platform.uname()
+uname_result(system='Linux', node='localhost.localdomain', release='4.0.4-301.fc22.x86_64', version='#1 SMP Thu May 21 13:10:33 UTC 2015', machine='x86_64', processor='x86_64')
+
+
+
+

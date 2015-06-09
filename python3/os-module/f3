@@ -1,0 +1,10 @@
+This script shows how we can execute shell scripts and return output of these scripts using os.popen()
+
+os.popen() opens a pipe to or from command
+
+>>> import os
+>>> dir = os.popen("ls").readlines()
+>>> print (dir)
+['f1.py\n', 'f2.py\n', 'README\n']
+>>> 
+

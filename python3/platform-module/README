@@ -1,0 +1,4 @@
+Platform module is used to access underlying platform's data like:
+1. hardware
+2. OS
+3. interpreter version
