@@ -1,0 +1,22 @@
+To change the output behaviour of interactive python shell
+
+sys.displayhook is a built in function which is used to change the way interpreter prints interactively entered expressions. To do this bind sys.displayhook to a callable object.
+
+
+>>> x = 50
+>>> x
+50
+>>> import sys
+>>> def display(x):
+...   print ("The value of x: "),
+...   print (x)
+... 
+>>> sys.displayhook = display
+>>> x
+The value of x: 
+50
+>>> print (x)
+50
+The value of x: 
+None
+>>> 
