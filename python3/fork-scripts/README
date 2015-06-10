@@ -1,0 +1,13 @@
+Forking is basically cloning processes. When a process forks, it creates a copy of itself. This copy runs as a child process of calling process.
+
+The fork operation creates a seperate addrees space and pid for the child. Child process has an exact copy of all memory(data, code) of parent process. Execution of parent and child process is independent of each other.
+
+With return value of fork(), we can determine in which process we are. 
+0- child process
+positive value- parent process
+negative value- error occurred
+
+To be able to fork, we need to import os module in Python
+
+Modules to use in Python3:
+os

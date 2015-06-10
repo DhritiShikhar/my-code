@@ -1,0 +1,25 @@
+Thread is the smallest unit that can be scheduled in an OS.
+
+Threads are created using fork.
+
+Threads are contained in processes. There can be many threads in a process. Every process contains atleast one thread (the process itself). They share memory and state of process. OS executes these threads like "parallel" processes using thread scheduling.
+
+Types of threads:
+- User level:
+	not implemented in kernel
+	similar to function or procedure call
+- Kernel level:
+ 	part of OS
+
+Advantages of threading:
+- can run faster on computer systems with multiple CPU because these threads can be executed truly concurrent.
+- program can remain responsive to input (on both single and multiple CPU)
+- threads of same process can share the memory of global variables
+- handling of threads is simpler than handling of processes for an OS. thats why they are sometimes called Light weight processes (LWP)
+
+Modules to use in Python3:
+- threading
+
+
+
+
